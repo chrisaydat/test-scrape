@@ -9,12 +9,12 @@ import time
 from bs4 import BeautifulSoup
 
 driver = webdriver.Chrome(ChromeDriverManager(cache_valid_range=0).install())
-link = "https://appstoreconnect.apple.com/analytics/app/d30/1608146534/overview?iaemeasure=totalDownloads"
+link = "https://appstoreconnect.apple.com/analytics/app/"
 driver.get(link)
 def apple_login():
- driver.get("https://appstoreconnect.apple.com/analytics/app/d30/1608146534/overview?iaemeasure=totalDownloads")
+ driver.get("https://appstoreconnect.apple.com/analytics/app/")
 WebDriverWait(driver, 10).until(EC.frame_to_be_available_and_switch_to_it((By.ID,"aid-auth-widget-iFrame")))
-WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "account_name_text_field"))).send_keys("chris@myladder.africa")
+WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "account_name_text_field"))).send_keys("enter email")
 driver.find_element_by_id().click()
 WebDriverWait(driver, 10).until(EC.frame_to_be_available_and_switch_to_it((By.ID,"aid-auth-widget-iFrame")))
 WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "password_text_field"))).send_keys("enter password")
